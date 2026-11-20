@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Avant / après · Carrières Endeavour Mining</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="img/logo.svg"><link rel="stylesheet" href="style.css?v=3">
+</head><body>
+<header class="top"><div class="wrap">
+ <a class="logo" data-keep href="index.html"><img src="img/logo-blanc.svg" alt="Endeavour Mining"></a>
+ <nav><a data-keep href="index.html" data-i="nav_jobs"></a><a data-keep href="avant-apres.html" data-i="nav_ba"></a></nav>
+ <div class="lang" role="group" aria-label="Langue"><button data-l="fr">FR</button><button data-l="en">EN</button></div>
+</div></header>
+<main class="wrap" id="ba"></main>
+<footer><div class="wrap">
+ <div><img src="img/logo-blanc.svg" alt="Endeavour Mining"><p data-i="ft_about"></p></div>
+ <div></div><div></div>
+ <p class="fine" data-i="ft_fine"></p>
+</div></footer>
+<script src="data.js?v=1"></script>
+<script>
+window.renderBA=function(){
+ var L=EDV.L(), fr=L==='fr';
+ var A=function(f,t,c){return '<figure><figcaption><span class="lbl av">'+(fr?'Avant':'Before')+'</span>'+t+'</figcaption><img src="img/avant/'+f+'" alt=""'+(f.indexOf('full')>0?' style="max-width:240px;margin:0 auto;display:block"':'')+'>'+(c?'<p class="src" style="margin:10px 0 0">'+c+'</p>':'')+'</figure>'};
+ var P=function(f,t,c){return '<figure><figcaption><span class="lbl ap">'+(fr?'Après':'After')+'</span>'+t+'</figcaption><img src="img/apres/'+f+'" alt="">'+(c?'<p class="src" style="margin:10px 0 0">'+c+'</p>':'')+'</figure>'};
+ var X=function(rows){return '<div class="fix">'+rows.map(function(r){return '<div><b>'+r[0]+'</b><s>'+r[1]+'</s><br>'+r[2]+'</div>'}).join('')+'</div>'};
+ var S=function(h,p,pair,fix,mob){return '<div class="ba-sec"><h2>'+h+'</h2><p style="color:var(--grey);margin:8px 0 0">'+p+'</p><div class="pair'+(mob?' mob':'')+'">'+pair+'</div>'+(fix||'')+'</div>'};
+ document.getElementById('ba').innerHTML=
+ '<div class="ba-head"><span class="eyebrow" style="color:var(--orange)">'+(fr?'Avant / après':'Before / after')+'</span><h1>'+(fr?'La page carrières, telle qu\u2019elle est et telle qu\u2019elle pourrait être':'The careers page, as it is and as it could be')+'</h1>'+
+ '<p>'+(fr?'À gauche, les pages publiques d\u2019endeavourmining.com relevées le 3 novembre 2026 (ordinateur 1 440 px, téléphone 390 px). À droite, la nouvelle page, avec les mêmes offres et les mêmes chiffres, relevés à nouveau le 20 novembre 2026.':'Left: public pages of endeavourmining.com captured on 3 November 2026 (desktop 1,440 px, phone 390 px). Right: the new page, with the same jobs and figures, re-checked on 20 November 2026.')+'</p>'+
+ '<div class="big3"><div><b>0</b><span>'+(fr?'fenêtre avant le premier mot (2 avant)':'pop-ups before the first word (2 before)')+'</span></div><div><b>1</b><span>'+(fr?'écran pour chercher une offre, en français ou en anglais':'screen to search for a job, in French or English')+'</span></div><div><b>3</b><span>'+(fr?'écrans pour postuler sur téléphone (formulaire aux trois quarts de la page avant)':'screens to apply on a phone (form three quarters down the page before)')+'</span></div></div></div>'+
+ S(fr?'1. Premier écran, sur ordinateur':'1. First screen, desktop', fr?'Avant : deux fenêtres superposées, puis le seul mot « Careers ». Après : une promesse, une recherche, trois raccourcis.':'Before: two stacked pop-ups, then just the word \u201cCareers\u201d. After: a promise, a search box, three shortcuts.',
+   A('careers_desk_first.jpg', fr?'endeavourmining.com/careers':'endeavourmining.com/careers')+P('ordi_accueil_fr.jpg', fr?'Nouvelle page carrières':'New careers page'),
+   X([[fr?'Avertissement fraude':'Fraud warning', fr?'fenêtre bloquante':'blocking pop-up', fr?'une ligne en tête de page, lien vers la page complète':'one line at the top, linked to the full page'],[fr?'Langue':'Language', fr?'anglais seul':'English only', fr?'FR / EN en un clic, mémorisé':'FR / EN in one click, remembered'],[fr?'Action':'Action', fr?'« Join us » sous la ligne de flottaison':'\u201cJoin us\u201d below the fold', fr?'recherche par métier et pays au premier écran':'search by role and country on the first screen'],[fr?'Preuves':'Proof', fr?'chiffres en bas de page':'figures far down the page', fr?'14 615 · 95 % · 68 % · 5 mines juste sous la photo':'14,615 · 95% · 68% · 5 mines right under the photo']]))+
+ S(fr?'2. Premier écran, sur téléphone':'2. First screen, phone', fr?'Avant : l\u2019écran entier est occupé par les cookies. Après : la recherche est visible sans faire défiler.':'Before: the whole screen is cookie settings. After: search is visible without scrolling.',
+   A('careers_mob_first.jpg','')+P('tel_accueil_fr.jpg',''), '', true)+
+ S(fr?'3. Une offre, sur ordinateur':'3. A job posting, desktop', fr?'Avant : titre en capitales, aucune mine, aucune date limite, aucun rythme. Après : huit repères en haut de l\u2019offre, au même endroit pour toutes.':'Before: all-caps title, no mine, no closing date, no roster. After: eight key facts at the top, in the same place for every job.',
+   A('job_db_desk_first.jpg','Drill and Blast Superintendent')+P('ordi_offre.jpg', fr?'Métallurgiste senior':'Senior Metallurgist'),
+   X([[fr?'Date limite':'Closing date', '0 / 20', fr?'sur toutes les offres (proposée à 30 jours)':'on every job (proposed at 30 days)'],[fr?'Mine ou site':'Mine or site', '3 / 20', fr?'case obligatoire, signalée « à fixer par les RH » si absente':'mandatory field, flagged \u201cto be set by HR\u201d if missing'],[fr?'Rythme de travail':'Roster', '1 / 20', fr?'case obligatoire du gabarit':'mandatory template field'],[fr?'Rémunération':'Pay', '0 / 20', fr?'fourchette à publier, case du gabarit':'range to be published, template field'],[fr?'Pourquoi Endeavour':'Why Endeavour', '0 / 20', fr?'bloc commun à toutes les offres':'shared block on every job'],[fr?'Processus':'Process', fr?'sur une autre page':'on another page', fr?'4 étapes dans chaque offre':'4 steps inside every job']]))+
+ S(fr?'4. Postuler sur téléphone':'4. Applying on a phone', fr?'Avant : le formulaire n\u2019arrive qu\u2019aux trois quarts de la page, après toutes les missions, et la date, le pays et le contrat viennent encore après. Après : un bouton « Postuler » toujours visible, puis trois écrans.':'Before: the form only starts three quarters of the way down, after every duty, with date, country and contract even further down. After: an always-visible Apply button, then three screens.',
+   A('job_db_mob_full.jpg', fr?'Page entière (réduite)':'Full page (scaled)')+'<figure><figcaption><span class="lbl ap">'+(fr?'Après':'After')+'</span>'+(fr?'Bouton fixe, puis 3 écrans':'Sticky button, then 3 screens')+'</figcaption><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><img src="img/apres/tel_offre.jpg" alt=""><img src="img/apres/tel_form1.jpg" alt=""><img src="img/apres/tel_form2.jpg" alt=""><img src="img/apres/tel_form3.jpg" alt=""></div></figure>', '', true)+
+ S(fr?'5. Jeunes, stages, emploi local':'5. Graduates, internships, local hiring', fr?'Avant : aucune entrée. Après : trois portes, avec les chiffres publiés par Endeavour (844 stages en 2025, 22 % de salariés issus des communautés).':'Before: no entry point. After: three doors, with figures published by Endeavour (844 internships in 2025, 22% of employees from host communities).',
+   A('jobs_desk_first.jpg', fr?'Liste des offres':'Job list')+P('ordi_portes.jpg', fr?'Trois portes d\u2019entrée':'Three ways in'))+
+ '<div class="ba-sec"><h2>'+(fr?'Ce qui reste à fournir par l\u2019équipe RH':'What the HR team still needs to provide')+'</h2><ul style="margin-top:12px">'+
+ (fr?['La mine de rattachement et le rythme (rotation) de chaque poste','Une fourchette de rémunération ou de package, au moins par niveau','La date limite réelle de chaque offre (la maquette propose 30 jours)','La traduction validée des offres, et le canal d\u2019alerte (e-mail, WhatsApp)']:['The mine and roster for each role','A pay or package range, at least by level','The actual closing date for each job (mock-up proposes 30 days)','Approved translations, and the alert channel (email, WhatsApp)']).map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'+
+ '<p class="src" style="margin-top:16px">'+(fr?'Offres reprises le 20/11/2026 : 5 offres en ligne sur endeavourmining.com + 1 stage publié par Endeavour sur Recrutyx. Textes résumés et traduits ; offre d\u2019origine en lien sur chaque page.':'Jobs taken on 20/11/2026: 5 live jobs on endeavourmining.com + 1 internship posted by Endeavour on Recrutyx. Copy summarised and translated; original posting linked on each page.')+'</p></div>';
+};
+</script>
+<script src="app.js?v=1"></script>
+</body></html>
